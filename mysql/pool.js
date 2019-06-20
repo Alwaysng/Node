@@ -12,6 +12,8 @@ var pool = mysql.createPool({
 //     console.log('The solution is: ', results);
 // });
 const db = (sql, params, callback) => {
+    //params 存放查询语句条件 其是一个对象例如:{name : li,...}
+    //callback 返回的查询结果
     pool.getConnection(function (err, connection) {
         if (err) throw err; // not connected!
         // Use the connection
@@ -19,6 +21,7 @@ const db = (sql, params, callback) => {
             ...params
         }], function (error, results, fields) {
             // When done with the connection, release it.
+            //callback回调函数(js方法) ,将查询的结果放出去
             callback(results);
             connection.release();
 
