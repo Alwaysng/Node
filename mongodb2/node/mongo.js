@@ -1,32 +1,11 @@
 const {
     MongoClient,
-    ObjectId //数据id
+    ObjectId
 } = require('mongodb');
-
 // Connection URL
 const url = 'mongodb://localhost:27017';
-
 // Database Name
 const dbName = '1902';
-
-// // Use connect method to connect to the server
-// MongoClient.connect(url, function (err, client) {
-//     //   assert.equal(null, err);
-//     console.log("Connected successfully to server");
-
-//     const db = client.db(dbName);
-//     // console.log(db)
-
-//     const collection = db.collection('user');
-//     // Find some documents
-//     collection.find({}).toArray(function (err, docs) {
-//         console.log(docs);
-//     });
-
-//     client.close();
-// });
-
-
 // Use connect method to connect to the server
 // 异步 回调金字塔，回调地狱
 
