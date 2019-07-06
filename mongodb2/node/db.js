@@ -98,7 +98,7 @@ exports.update = (collectionName, query, data) => {
 }
 
 /**
- * @修改
+ * @
  * 支持单条和多条修改
  */
 exports.find = (collectionName, query) => {
