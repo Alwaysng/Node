@@ -46,11 +46,11 @@ Router.route('/')
 
     // pool.query('select * from goods', function(error, data){
     //     res.send(formatData({data}))
-    // });
+    // });F
 
     // res.send(JSON.stringify(req));
 
-    query('select * from goods').then(function(data){
+    query('select * from userinfo').then(function(data){
         // data: promise对象改成resolve状态时传回的参数
         res.send(formatData({data}))
     },(err)=>{
@@ -77,7 +77,7 @@ Router.route('/')
     names = names.slice(0,-1)
     values = values.slice(0,-1)
 
-    let sql = `insert into goods(${names}) values(${values})`;
+    let sql = `insert into userinfo(${names}) values(${values})`;
 
     query(sql).then(data=>{
         res.send(formatData({data}))
@@ -113,7 +113,7 @@ Router.route('/:id')
     opt = opt.slice(0,-1)
 
 
-    let sql = `update goods set ${opt} where id=${id}`;
+    let sql = `update userinfo set ${opt} where id=${id}`;
 
     query(sql).then(data=>{
         res.send(formatData({data}))
@@ -152,7 +152,7 @@ Router.route('/:id')
     // });
 
 
-    query(`select * from goods where id=${id}`).then(function(data){
+    query(`select * from userinfo where id=${id}`).then(function(data){
         // data: promise对象改成resolve状态时传回的参数
         res.send(formatData({data}))
     },(err)=>{
@@ -168,7 +168,7 @@ Router.route('/:id')
     console.log('params:',req.params)
 
 
-    let sql = `delete from goods where id=${id}`;
+    let sql = `delete from userinfo where id=${id}`;
 
     query(sql).then(data=>{
         res.send(formatData());
